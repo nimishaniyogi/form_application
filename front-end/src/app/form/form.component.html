@@ -1,0 +1,101 @@
+<div class="panel panel-default">
+  <div class="panel-heading custom_class">
+    <h1>
+      3D Printing
+      <small class="text-muted"> Request Form</small>
+    </h1>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body">
+      <form #userform="ngForm" (Submit)="Submit(userform)">
+        <div class="form-group">
+          <label for="name">
+            <b>Full Name</b>
+          </label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="userModel.name">
+        </div>
+        <div class="form-group">
+          <label for="wsu">
+            <b>MyWSU ID</b>
+          </label>
+          <input type="text" class="form-control" name="wsu" [(ngModel)]="userModel.wsu">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">
+            <b>Phone Number</b>
+          </label>
+          <input type="number" class="form-control" name="phone" [(ngModel)]="userModel.phone">
+        </div>
+
+        <div class="form-group">
+          <label for="email">
+            <b>Email</b>
+          </label>
+          <input type="email" class="form-control" name="email" [(ngModel)]="userModel.email">
+        </div>
+
+
+        <div class="mb-3">
+          <Label>Color</Label>
+          <div class="radio">
+            <input class="radio-input" type="radio" name="Color" value="Grey" [(ngModel)]="userModel.Color">
+            <label class="form-label">Grey</label>
+          </div>
+          <div class="radio">
+            <input class="radio-input" type="radio" name="Color" value="Black" [(ngModel)]="userModel.Color">
+            <label class="radio-label">Black</label>
+          </div>
+          <div class="radio">
+            <input class="radio-input" type="radio" name="Color" value="Translucent Blue" [(ngModel)]="userModel.Color">
+            <label class="radio-label">Translucent Blue</label>
+          </div>
+          <div class="radio">
+            <input class="radio-input" type="radio" name="Color" value="Yellow" [(ngModel)]="userModel.Color">
+            <label class="radio-label">Yellow</label>
+          </div>
+          
+        </div>
+
+        <div class="form-group">
+          <label for="details">
+            <b>Additional Details</b>
+          </label>
+          <textarea class="form-control" name="details" [(ngModel)]="userModel.details"></textarea>
+        </div>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" name="Subscribe" type="checkbox" [(ngModel)]="userModel.Subscribe">
+          <label class="form-check-label">
+            <u>Agree to Cost and 3D Printing Policy</u>
+            <p>By signing below, I affirm that I am either a currently enrolled Wichita State University student or a current
+              employee of Wichita State University, and agree to the 3D Printing Policy.
+              <u>(http://libresources.wichita.edu/creationspace/3Dprinting)</u>
+              <br/> Accordingly, I agree to pay the final cost of the printed item. ($0.20 per gram of filament used in my 3D
+              print, payable by cash or credit card at the Circulation Desk.) </p>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="sign">
+            <b>Signature</b>
+          </label>
+          <input type="sign" class="form-control" name="sign" [(ngModel)]="userModel.sign">
+        </div>
+        <!-- <input type="file" (change)="onFileSelected($event)"> -->
+        <br>
+        <br>
+        <!-- Sai File Create-->
+        <input type="file" id="inputGroupFile01" (change)="onFileSelected($event)">
+        <!-- Sai File Create End-->
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit" (click)="submit()"> Submit </button>
+      </form>
+    </div>
+  </div>
+</div>
+
