@@ -63,8 +63,8 @@ var filePath = `${__dirname}/form.xlsx`;
 
       // Really BAD Basic AUTH, need to change this to OAuth
       auth: {
-        user: `3dprintlibrarywsu@gmail.com`, // generated ethereal user
-        pass: `aamariwsu` // generated ethereal password
+        user: ` ` ,// generated ethereal user
+        pass: ` ` // generated ethereal password
       },
       tls: {
         rejectUnauthorized: false,
@@ -73,8 +73,8 @@ var filePath = `${__dirname}/form.xlsx`;
     // get file extension
     // setup email data with unicode symbols
     let mailOptions = {
-      from: '"Register App 👻" <register@example.com>', // sender address
-      to: '3dprintlibrarywsu@gmail.com', // list of receivers
+      from: '"', // sender address
+      to: '', // list of receivers
       subject: '3D print Request', // Subject line
       text: 'Hello, Following is the 3D print request', // plain text body
       html: `<b>Details of the patron :</b> 
@@ -97,8 +97,6 @@ var filePath = `${__dirname}/form.xlsx`;
       // Preview only available when sending through an Ethereal account
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
     });
   });
   // ********************************************************************************
@@ -150,8 +148,8 @@ app.post('/upload/:name', function uploadAudio(req, res) {
 // Create Endpoint End
 
 
-
-mongoose.connect('mongodb://user:user1234@ds227821.mlab.com:27821/pssocial_demo', {
+//replace the datatbase connect with mongoose database link
+mongoose.connect('database connect', {
   useNewUrlParser: true
 }, (err) => {
   if (!err)
